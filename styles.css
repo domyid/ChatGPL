@@ -27,7 +27,6 @@ body {
     display: flex;
     flex-direction: column-reverse; /* Membalikkan arah kolom untuk pesan baru di bawah */
     margin-top: 50px; /* Memberi ruang untuk header tetap */
-    margin-bottom: 60px; /* Memberi ruang untuk input tetap */
     overflow: hidden;
 }
 
