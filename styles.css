@@ -13,6 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%; /* Mengatur lebar penuh */
+    margin: 0;
     overflow: hidden;
 }
 
