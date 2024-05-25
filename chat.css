@@ -61,6 +61,7 @@ body {
     padding: 10px;
     background-color: #fff;
     border-top: 1px solid #ccc;
+    align-items: center; /* Menyelaraskan elemen secara vertikal di tengah */
 }
 
 .chat-input input {
@@ -69,6 +70,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
+    min-width: 0; /* Mencegah input melampaui container pada layar kecil */
 }
 
 .chat-input button {
@@ -80,6 +82,7 @@ body {
     font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
+    flex-shrink: 0; /* Mencegah tombol mengecil terlalu banyak pada layar kecil */
 }
 
 .chat-input button:hover {
