@@ -68,6 +68,7 @@ body {
 .chat-input button {
     padding: 10px 20px;
     margin-left: 10px;
+    margin-right: 10px; /* Tambahkan margin kanan di sini */
     border: none;
     background-color: #4CAF50;
     color: white;
