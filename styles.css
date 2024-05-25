@@ -3,14 +3,19 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    height: 100vh; /* Pastikan body memenuhi viewport height */
+    display: flex;
+    flex-direction: column;
 }
 
 .chat-container {
-    height: calc(100vh - 50px); /* Tinggi chat container mengambil tinggi layar kecuali tinggi input */
+    flex: 1; /* Isi ruang yang tersedia */
+    display: flex;
+    flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
     border: 1px solid #ccc;
-    overflow-y: auto; /* Memberikan scroll jika chat panjang */
+    overflow: hidden; /* Menghilangkan scrollbar pada container */
 }
 
 .chat-header {
@@ -19,10 +24,20 @@ body {
     padding: 10px;
     text-align: center;
     font-size: 1.2em;
+    flex-shrink: 0; /* Jangan biarkan header mengecil */
 }
 
 .chat-messages {
+    flex: 1;
     padding: 10px;
+    overflow-y: auto; /* Konten dapat di-scroll */
+    background-color: #f1f1f1;
+    -ms-overflow-style: none;  /* Menghilangkan scrollbar di IE dan Edge */
+    scrollbar-width: none;  /* Menghilangkan scrollbar di Firefox */
+}
+
+.chat-messages::-webkit-scrollbar {
+    display: none; /* Menghilangkan scrollbar di Chrome, Safari, dan Opera */
 }
 
 .chat-message {
@@ -54,6 +69,9 @@ body {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Memberi shadow untuk memisahkan dari konten */
     display: flex;
     align-items: center;
+    max-width: 600px;
+    margin: 0 auto; /* Agar input mengikuti lebar chat */
+    box-sizing: border-box;
 }
 
 .chat-input input {
@@ -62,13 +80,11 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
-    width: calc(100% - 80px); /* Lebar input mengikuti lebar chat */
+    margin-right: 10px;
 }
 
 .chat-input button {
     padding: 10px 20px;
-    margin-left: 10px;
-    margin-right: 20px; /* Tambahkan margin kanan di sini */
     border: none;
     background-color: #4CAF50;
     color: white;
