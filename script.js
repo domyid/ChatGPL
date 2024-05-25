@@ -35,6 +35,7 @@ if (window["WebSocket"]) {
     var messages = evt.data.split('\n');
     for (var i = 0; i < messages.length; i++) {
       var item = document.createElement("div");
+      item.classList.add('chat-message', 'user');//tambah kelas
       item.innerText = messages[i];
       appendLog(item);
     }
