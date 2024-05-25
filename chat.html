@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            overflow: hidden; /* Menghilangkan scrollbar pada body */
         }
         .chat-container {
             display: flex;
@@ -18,6 +19,7 @@
             max-width: 600px;
             margin: 0 auto;
             border: 1px solid #ccc;
+            overflow: hidden; /* Menghilangkan scrollbar pada container */
         }
         .chat-header {
             background-color: #4CAF50;
@@ -29,8 +31,13 @@
         .chat-messages {
             flex: 1;
             padding: 10px;
-            overflow-y: auto;
+            overflow-y: scroll; /* Konten dapat di-scroll, tetapi scrollbar tidak ditampilkan */
             background-color: #f1f1f1;
+            -ms-overflow-style: none;  /* Menghilangkan scrollbar di IE dan Edge */
+            scrollbar-width: none;  /* Menghilangkan scrollbar di Firefox */
+        }
+        .chat-messages::-webkit-scrollbar {
+            display: none; /* Menghilangkan scrollbar di Chrome, Safari, dan Opera */
         }
         .chat-message {
             margin-bottom: 10px;
