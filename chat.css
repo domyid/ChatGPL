@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden; /* Menghilangkan scrollbar pada body */
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    overflow: hidden; /* Menghilangkan scrollbar pada container */
+}
+
+.chat-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: scroll; /* Konten dapat di-scroll, tetapi scrollbar tidak ditampilkan */
+    background-color: #f1f1f1;
+    -ms-overflow-style: none;  /* Menghilangkan scrollbar di IE dan Edge */
+    scrollbar-width: none;  /* Menghilangkan scrollbar di Firefox */
+}
+
+.chat-messages::-webkit-scrollbar {
+    display: none; /* Menghilangkan scrollbar di Chrome, Safari, dan Opera */
+}
+
+.chat-message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 70%;
+}
+
+.chat-message.user {
+    background-color: #d1e7dd;
+    align-self: flex-end;
+    text-align: right; /* Mengatur teks berada di sebelah kanan */
+    margin-left: auto; /* Menggeser kotak hijau ke arah kanan */
+}
+
+.chat-message.other {
+    background-color: #f8d7da;
+    align-self: flex-start;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #45a049;
+}
