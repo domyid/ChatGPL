@@ -3,18 +3,14 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden; /* Menghilangkan scrollbar pada body */
-    height: 100vh; /* Pastikan body memenuhi viewport height */
 }
 
 .chat-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    height: calc(100vh - 50px); /* Tinggi chat container mengambil tinggi layar kecuali tinggi input */
     max-width: 600px;
     margin: 0 auto;
     border: 1px solid #ccc;
-    overflow: hidden; /* Menghilangkan scrollbar pada container */
+    overflow-y: auto; /* Memberikan scroll jika chat panjang */
 }
 
 .chat-header {
@@ -26,16 +22,7 @@ body {
 }
 
 .chat-messages {
-    flex: 1;
     padding: 10px;
-    overflow-y: scroll; /* Konten dapat di-scroll, tetapi scrollbar tidak ditampilkan */
-    background-color: #f1f1f1;
-    -ms-overflow-style: none;  /* Menghilangkan scrollbar di IE dan Edge */
-    scrollbar-width: none;  /* Menghilangkan scrollbar di Firefox */
-}
-
-.chat-messages::-webkit-scrollbar {
-    display: none; /* Menghilangkan scrollbar di Chrome, Safari, dan Opera */
 }
 
 .chat-message {
@@ -48,8 +35,7 @@ body {
 .chat-message.user {
     background-color: #d1e7dd;
     align-self: flex-end;
-    text-align: right; /* Mengatur teks berada di sebelah kanan */
-    margin-left: auto; /* Menggeser kotak hijau ke arah kanan */
+    text-align: right;
 }
 
 .chat-message.other {
@@ -57,17 +43,16 @@ body {
     align-self: flex-start;
 }
 
-.chat-input-container {
-    position: sticky; /* Pastikan input tetap berada di bagian bawah */
-    bottom: 0;
-    background-color: white; /* Latar belakang putih untuk input */
-    border-top: 1px solid #ccc;
-}
-
 .chat-input {
-    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
     padding: 10px;
-    align-items: center; /* Menyelaraskan elemen secara vertikal di tengah */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Memberi shadow untuk memisahkan dari konten */
+    display: flex;
+    align-items: center;
 }
 
 .chat-input input {
@@ -76,7 +61,6 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
-    min-width: 0; /* Mencegah input melampaui container pada layar kecil */
 }
 
 .chat-input button {
@@ -88,7 +72,6 @@ body {
     font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
-    flex-shrink: 0; /* Mencegah tombol mengecil terlalu banyak pada layar kecil */
 }
 
 .chat-input button:hover {
