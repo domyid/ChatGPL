@@ -13,8 +13,6 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%; /* Mengatur lebar penuh */
-    /*margin: 0;*/
-    margin-top: 50px; /* Memberi ruang untuk header tetap */
     overflow: hidden;
 }
 
@@ -24,7 +22,7 @@ body {
     padding: 10px;
     text-align: center;
     font-size: 1.2em;
-    position: fixed;/*sticky;*/
+    position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
