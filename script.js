@@ -6,7 +6,8 @@ var btn = document.getElementById("sendbutton");
 
 function appendLog(item) {
   var doScroll = log.scrollTop > log.scrollHeight - log.clientHeight - 1;
-  log.appendChild(item);
+  var firstMessage =log.firstChild;
+  log.insertBefore(item,firstMessage);
   if (doScroll) {
     log.scrollTop = log.scrollHeight - log.clientHeight;
   }
