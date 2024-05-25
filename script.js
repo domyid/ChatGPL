@@ -10,7 +10,7 @@ function appendLog(item) {
   }
 }
 
-document.getElementById("form").onsubmit = function () {
+document.getElementById("sendbutton").onclick = function () {
   if (!conn) {
     return false;
   }
