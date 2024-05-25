@@ -36,6 +36,7 @@ body {
     background-color: #d1e7dd;
     align-self: flex-end;
     text-align: right;
+    margin-left: auto; /* Mepet ke kanan */
 }
 
 .chat-message.other {
@@ -61,6 +62,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
+    width: calc(100% - 80px); /* Lebar input mengikuti lebar chat */
 }
 
 .chat-input button {
