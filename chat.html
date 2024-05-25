@@ -14,35 +14,16 @@
 
     <div class="chat-container">
         <div class="chat-messages">
-            <div class="chat-message user">Pesan dari user</div>
+            <!-- Pesan dari orang lain -->
             <div class="chat-message other">Pesan dari orang lain</div>
+            <!-- Pesan dari user -->
+            <div class="chat-message user">Pesan dari user</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Ketik pesan...">
+            <button>Kirim</button>
         </div>
     </div>
-
-    <div class="chat-input">
-        <input type="text" placeholder="Ketik pesan...">
-        <button>Kirim</button>
-    </div>
-
-    <script>
-        // Menyesuaikan tinggi chat-container saat keyboard muncul di perangkat seluler
-        window.addEventListener('resize', () => {
-            const chatContainer = document.querySelector('.chat-container');
-            const chatInput = document.querySelector('.chat-input');
-            const headerHeight = document.querySelector('.chat-header').offsetHeight;
-            const inputHeight = chatInput.offsetHeight;
-
-            chatContainer.style.height = `calc(100vh - ${headerHeight + inputHeight}px)`;
-        });
-
-        // Initial resize adjustment
-        const chatContainer = document.querySelector('.chat-container');
-        const chatInput = document.querySelector('.chat-input');
-        const headerHeight = document.querySelector('.chat-header').offsetHeight;
-        const inputHeight = chatInput.offsetHeight;
-
-        chatContainer.style.height = `calc(100vh - ${headerHeight + inputHeight}px)`;
-    </script>
 
 </body>
 </html>
