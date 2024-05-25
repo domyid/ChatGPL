@@ -1,5 +1,5 @@
 var conn;
-var alias=makeid(8);
+var alias=makeid(4);
 document.getElementById("judul").innerHTML = alias;
 var msg = document.getElementById("msg");
 var log = document.getElementById("log");
