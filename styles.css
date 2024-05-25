@@ -8,31 +8,32 @@ body {
     flex-direction: column;
 }
 
-.chat-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    width: 100%; /* Mengatur lebar penuh */
-    margin: 0;
-    overflow: hidden;
-}
-
 .chat-header {
     background-color: #4CAF50;
     color: white;
     padding: 10px;
     text-align: center;
     font-size: 1.2em;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1000;
     width: 100%;
+    z-index: 1000;
     flex-shrink: 0;
+}
+
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px; /* Memberi ruang untuk header tetap */
+    overflow: hidden;
 }
 
 .chat-messages {
     flex: 1;
     padding: 10px;
+    display: flex;
+    flex-direction: column-reverse; /* Membalikkan arah kolom */
     overflow-y: auto;
     background-color: #f1f1f1;
     -ms-overflow-style: none;
