@@ -3,17 +3,25 @@
 <head>
   <title>Free Instant Disposable Chat</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  <style>
+    .custom-container {
+      width: 80%;
+      margin: 20px auto;
+    }
+  </style>
 </head>
 <body>
-  <div id="log"></div>
-
-    <div class="control is-expanded">
-      <input class="input" type="text" id="msg" placeholder="Type your message" autofocus autocomplete="off">
+  <div class="custom-container">
+    <div id="log"></div>
+    <div class="field is-grouped">
+      <div class="control is-expanded">
+        <input class="input" type="text" id="msg" placeholder="Type your message" autofocus autocomplete="off">
+      </div>
+      <div class="control">
+        <button class="button is-info" id="sendbutton">Send</button>
+      </div>
     </div>
-    <div class="control">
-      <button class="button is-info" id="sendbutton">Send</button>
-    </div>
-
+  </div>
 
   <script src="script.js"></script>
 </body>
