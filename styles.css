@@ -6,6 +6,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .chat-header {
@@ -26,6 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 50px; /* Memberi ruang untuk header tetap */
+    margin-bottom: 60px; /* Memberi ruang untuk input tetap */
     overflow: hidden;
 }
 
