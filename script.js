@@ -1,6 +1,7 @@
 var conn;
 var msg = document.getElementById("msg");
 var log = document.getElementById("log");
+var btn = document.getElementById("sendbutton");
 
 function appendLog(item) {
   var doScroll = log.scrollTop > log.scrollHeight - log.clientHeight - 1;
@@ -10,7 +11,7 @@ function appendLog(item) {
   }
 }
 
-document.getElementById("sendbutton").onclick = function () {
+btn.onclick = function () {
   if (!conn) {
     return false;
   }
