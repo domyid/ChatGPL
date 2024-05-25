@@ -1,5 +1,6 @@
 var conn;
 var alias=makeid(8);
+document.getElementById("judul").innerHTML = alias;
 var msg = document.getElementById("msg");
 var log = document.getElementById("log");
 var btn = document.getElementById("sendbutton");
