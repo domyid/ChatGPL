@@ -1,0 +1,15 @@
+/* Style for chat form */
+.chat-form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ccc;
+}
+/* Style for chat input */
+.chat-input {
+  width: calc(100% - 120px);
+  margin-right: 10px;
+}
