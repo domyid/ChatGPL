@@ -25,24 +25,25 @@ body {
 .chat-container {
     flex: 1;
     display: flex;
-    flex-direction: column-reverse; /* Membalikkan arah kolom untuk pesan baru di bawah */
+    flex-direction: column;
     margin-top: 50px; /* Memberi ruang untuk header tetap */
     overflow: hidden;
+    position: relative;
 }
 
 .chat-messages {
     flex: 1;
     padding: 10px;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     overflow-y: auto;
     background-color: #f1f1f1;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 .chat-messages::-webkit-scrollbar {
-    display: none;
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .chat-message {
@@ -50,7 +51,7 @@ body {
     padding: 10px;
     border-radius: 5px;
     max-width: 70%;
-    word-wrap: break-word; /* Tambahkan ini untuk membungkus kata yang panjang */
+    word-wrap: break-word;
 }
 
 .chat-message.user {
