@@ -1,4 +1,5 @@
 var conn;
+var alias=makeid(8);
 var msg = document.getElementById("msg");
 var log = document.getElementById("log");
 var btn = document.getElementById("sendbutton");
@@ -18,7 +19,7 @@ btn.onclick = function () {
   if (!msg.value) {
     return false;
   }
-  conn.send(msg.value);
+  conn.send(alias+" >> "+msg.value);
   msg.value = "";
   return false;
 };
@@ -50,3 +51,16 @@ msg.addEventListener("keypress", function(event) {
       document.getElementById("sendbutton").click();
   }
 });
+
+
+function makeid(length) {
+  let result = '';
+  const characters = '⚽️🏀🏈⚾️🥎🎾🏐🏉🥏🎱🪀🏓🏸🏒🏑🥍🏏🍏🍎🍋‍🟩🍌🍉🍇🍓🐶🐱🐭🐹🐰🦊🐻🐼🐻‍❄️🐨🐯🦁🐮🐷🐽🐸🐵🙈🙉🙊🐒🐔🐧🐦‍⬛🐤🐣🐥🦆🦅🦉🦇🐺🐗😀😃😄😁😆😅😂🤣😊😇🙂🙃😉😌😍🥰😘😗😙😚😋😛😝😜🤪🤨🧐🤓😎';
+  const charactersLength = characters.length;
+  let counter = 0;
+  while (counter < length) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    counter += 1;
+  }
+  return result;
+}
