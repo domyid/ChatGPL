@@ -25,9 +25,8 @@ body {
 .chat-container {
     flex: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse; /* Membalikkan arah kolom untuk pesan baru di bawah */
     margin-top: 50px; /* Memberi ruang untuk header tetap */
-    margin-bottom: 60px; /* Memberi ruang untuk input tetap */
     overflow: hidden;
 }
 
@@ -35,7 +34,7 @@ body {
     flex: 1;
     padding: 10px;
     display: flex;
-    flex-direction: column-reverse; /* Membalikkan arah kolom */
+    flex-direction: column-reverse;
     overflow-y: auto;
     background-color: #f1f1f1;
     -ms-overflow-style: none;
