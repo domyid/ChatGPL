@@ -4,6 +4,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     overflow: hidden; /* Menghilangkan scrollbar pada body */
+    height: 100vh; /* Pastikan body memenuhi viewport height */
 }
 
 .chat-container {
@@ -56,11 +57,16 @@ body {
     align-self: flex-start;
 }
 
+.chat-input-container {
+    position: sticky; /* Pastikan input tetap berada di bagian bawah */
+    bottom: 0;
+    background-color: white; /* Latar belakang putih untuk input */
+    border-top: 1px solid #ccc;
+}
+
 .chat-input {
     display: flex;
     padding: 10px;
-    background-color: #fff;
-    border-top: 1px solid #ccc;
     align-items: center; /* Menyelaraskan elemen secara vertikal di tengah */
 }
 
