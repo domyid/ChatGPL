@@ -24,5 +24,25 @@
         <button>Kirim</button>
     </div>
 
+    <script>
+        // Menyesuaikan tinggi chat-container saat keyboard muncul di perangkat seluler
+        window.addEventListener('resize', () => {
+            const chatContainer = document.querySelector('.chat-container');
+            const chatInput = document.querySelector('.chat-input');
+            const headerHeight = document.querySelector('.chat-header').offsetHeight;
+            const inputHeight = chatInput.offsetHeight;
+
+            chatContainer.style.height = `calc(100vh - ${headerHeight + inputHeight}px)`;
+        });
+
+        // Initial resize adjustment
+        const chatContainer = document.querySelector('.chat-container');
+        const chatInput = document.querySelector('.chat-input');
+        const headerHeight = document.querySelector('.chat-header').offsetHeight;
+        const inputHeight = chatInput.offsetHeight;
+
+        chatContainer.style.height = `calc(100vh - ${headerHeight + inputHeight}px)`;
+    </script>
+
 </body>
 </html>

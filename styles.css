@@ -28,7 +28,6 @@ body {
     flex-direction: column;
     margin-top: 50px; /* Memberi ruang untuk header tetap */
     overflow: hidden;
-    position: relative;
 }
 
 .chat-messages {
