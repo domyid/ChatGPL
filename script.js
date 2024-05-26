@@ -8,12 +8,9 @@ const log = document.getElementById("log");
 const btn = document.getElementById("sendbutton");
 
 function appendLog(item) {
-  var doScroll = log.scrollTop > log.scrollHeight - log.clientHeight - 1;
   var firstMessage =log.firstChild;
   log.insertBefore(item,firstMessage);
-  if (doScroll) {
-    log.scrollTop = log.scrollHeight - log.clientHeight;
-  }
+  log.scrollTop=log.scrollHeight;
 }
 
 btn.onclick = function () {
