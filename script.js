@@ -29,7 +29,7 @@ if (window["WebSocket"]) {
   conn = new WebSocket("wss://wss.do.my.id/ws");
   conn.onclose = function (evt) {
     var item = document.createElement("div");
-    item.innerHTML = "<b>Koneksi terputus silahkan refresh.</b>";
+    item.innerHTML = "<b>Koneksi terputus karena dicuekin</b>";
     appendLog(item);
     disableInput('msg');
     disableInput('sendbutton');
