@@ -36,6 +36,7 @@ if (window["WebSocket"]) {
     appendLog(item);
     disableInput('msg');
     disableInput('sendbutton');
+    msg.placeholder = "Refresh browser kakak...";
   };
   conn.onmessage = function (evt) {
     var ident = getFrom(myId,evt.data,sep)
