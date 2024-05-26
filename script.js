@@ -45,6 +45,7 @@ if (window["WebSocket"]) {
       var item = document.createElement("div");
       item.classList.add('chat-message', ident.cls);//tambah kelas
       item.innerText = messages[i];
+      item.style.backgroundColor=evt.data.split(sep)[0];
       appendLog(item);
     }
   };
