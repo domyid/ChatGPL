@@ -1,3 +1,5 @@
+import {disableInput} from 'https://cdn.jsdelivr.net/gh/jscroot/element@0.1.7/croot.js';
+
 var conn;
 var alias=makeid(4);
 const myId=crypto.randomUUID();
@@ -33,6 +35,8 @@ if (window["WebSocket"]) {
     var item = document.createElement("div");
     item.innerHTML = "<b>Connection closed.</b>";
     appendLog(item);
+    disableInput('msg');
+    disableInput('sendbutton');
   };
   conn.onmessage = function (evt) {
     var ident = getFrom(myId,evt.data,sep)
