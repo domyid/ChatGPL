@@ -1,8 +1,7 @@
 import {disableInput} from 'https://cdn.jsdelivr.net/gh/jscroot/element@0.1.7/croot.js';
 
 var conn;
-var alias=makeid(4);
-const myId=crypto.randomUUID();
+const myId=getRandomColor();
 const sep='|||';
 const msg = document.getElementById("msg");
 const log = document.getElementById("log");
@@ -85,4 +84,14 @@ function getFrom(myid,message,sep){
     txt=message.split(sep)[1];
   }
   return {cls,txt};
+}
+
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
