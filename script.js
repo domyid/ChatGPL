@@ -1,8 +1,10 @@
 var conn;
 var alias=makeid(4);
-var msg = document.getElementById("msg");
-var log = document.getElementById("log");
-var btn = document.getElementById("sendbutton");
+const myId=crypto.randomUUID();
+const sep='|||';
+const msg = document.getElementById("msg");
+const log = document.getElementById("log");
+const btn = document.getElementById("sendbutton");
 
 function appendLog(item) {
   var doScroll = log.scrollTop > log.scrollHeight - log.clientHeight - 1;
@@ -20,7 +22,7 @@ btn.onclick = function () {
   if (!msg.value) {
     return false;
   }
-  conn.send(alias+" >> "+msg.value);
+  conn.send(myId+sep+msg.value);
   msg.value = "";
   return false;
 };
@@ -33,10 +35,11 @@ if (window["WebSocket"]) {
     appendLog(item);
   };
   conn.onmessage = function (evt) {
-    var messages = evt.data.split('\n');
+    var ident = getFrom(myId,evt.data,sep)
+    var messages = ident.txt.split('\n');
     for (var i = 0; i < messages.length; i++) {
       var item = document.createElement("div");
-      item.classList.add('chat-message', 'user');//tambah kelas
+      item.classList.add('chat-message', ident.cls);//tambah kelas
       item.innerText = messages[i];
       appendLog(item);
     }
@@ -65,4 +68,17 @@ function makeid(length) {
     counter += 1;
   }
   return result;
+}
+
+function getFrom(myid,message,sep){
+  var cls;
+  var txt;
+  if (message.includes(myid+sep)){
+    cls='user'; 
+    txt=message.replace(myid+sep,'');
+  }else{
+    cls='other'; 
+    txt=message.split(sep)[1];
+  }
+  return {cls,txt};
 }
