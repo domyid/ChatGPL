@@ -29,7 +29,7 @@ if (window["WebSocket"]) {
   conn = new WebSocket("wss://wss.do.my.id/ws");
   conn.onclose = function (evt) {
     var item = document.createElement("div");
-    item.innerHTML = '<h3>Koneksi terputus karena dicuekin</h3><img src="/reload.svg">';
+    item.innerHTML = '<h3>Koneksi terputus karena dicuekin</h3><img src="/reload.svg" onclick="location.reload()">';
     appendLog(item);
     disableInput('msg');
     disableInput('sendbutton');
