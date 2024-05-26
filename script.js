@@ -10,7 +10,7 @@ const btn = document.getElementById("sendbutton");
 function appendLog(item) {
   var firstMessage =log.firstChild;
   log.insertBefore(item,firstMessage);
-  log.scrollTop=log.scrollHeight;
+  log.scrollTop=0;
 }
 
 btn.onclick = function () {
