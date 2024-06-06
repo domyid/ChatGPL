@@ -26,7 +26,7 @@ btn.onclick = function () {
 };
 
 if (window["WebSocket"]) {
-  conn = new WebSocket("wss://wss.do.my.id/ws");
+  conn = new WebSocket("wss://apk.fly.dev/ws/chatgpl/public");
   conn.onclose = function (evt) {
     var item = document.createElement("div");
     item.innerHTML = '<center><h3>Putus karena dicuekin</h3><img src="/reload.svg" onclick="location.reload()"></center>';
